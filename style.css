@@ -10,6 +10,9 @@ body {
     background-color: #548587;
 }
 
+main {
+    margin-top: 3rem;
+}
 .container {
     height: 70vh;
     display: flex;
@@ -47,4 +50,42 @@ body {
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+}
+
+.winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winMsgBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #fdf5aa;
+    height: 40vh;
+    width: 100vh;
+    margin-top: 10rem;
+    padding: 1rem;
+    font-size: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0.4rem 0.6rem 0.4rem 0.2rem #113F67;
+}
+
+#button {
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: #34699A;
+    border: none;
+    box-shadow: 0.1rem 0.3rem 0.1rem #113f67;
+}
+
+#button:hover {
+    padding: 0.7rem;
+}
+
+#button:active {
+    opacity: 0.9;
 }

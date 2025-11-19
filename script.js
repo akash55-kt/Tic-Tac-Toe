@@ -2,7 +2,19 @@ let boxes = document.querySelectorAll(".box");
 let reset_button = document.querySelector(".reset-button");
 reset_button.innerText = "Restart Game";
 
+let main = document.querySelector("main");
+let winMsgBox = document.querySelector(".winner");
+let winMsg = document.querySelector("#winner_msg");
+let nxt_btn = document.querySelector("#button");
+
+nxt_btn.addEventListener("click", () => {
+    winMsgBox.style.display = "none";
+    main.style.display = "block";
+})
+
 let turn0 = true;//playerX, playe0
+
+winMsgBox.style.display = "none";
 
 const winPatterns = [
     [0, 1, 2],
@@ -46,7 +58,10 @@ const checkWinner = () => {
 
        if(po1Val != "" && po2Val != "" && po3Val != ""){
         if(po1Val === po2Val && po2Val === po3Val){
-            alert(`winner is ${po1Val}`);
+            winMsg.innerText = `${po1Val} is the winner`;
+            winMsgBox.style.display = "flex";
+            main.style.display = "none";
+            count = 0;
             boxes.forEach ((box) => {
                 box.innerText = str;
                 box.disabled = false;
@@ -65,7 +80,9 @@ reset_button.addEventListener("click", () => {
 });
 
 const matchDraw = () => {
-    alert("match is draw. Restart again");
+    winMsgBox.style.display = "flex";
+    winMsg.innerText = `The Match is Draw`;
+    main.style.display = "none";
     boxes.forEach((box) => {
         box.innerText = "";
         box.disabled = false;
