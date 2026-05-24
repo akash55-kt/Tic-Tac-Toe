@@ -76,6 +76,7 @@ reset_button.addEventListener("click", () => {
     boxes.forEach ((box) => {
         box.innerText = str;
         box.disabled = false;
+        count = 0;
     });
 });
 
